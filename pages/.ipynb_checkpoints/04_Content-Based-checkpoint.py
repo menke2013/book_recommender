@@ -7,10 +7,10 @@ st.set_page_config(layout="centered")
 st.markdown("<h1 style='text-align: center; color: red;font-size: 60px;'>Better Book Nights</h1>", unsafe_allow_html=True)
 
 
-selection_options_page4 = ['By Description', 'By Author']
+selection_options_page4 = ['Algorithm based on description', 'Algorithm based on author']
 selected_option_page4 = st.sidebar.radio('Choice', selection_options_page4)
 
-if selected_option_page4 == 'By Description':
+if selected_option_page4 == 'Algorithm based on description':
     
     df_all_books = pd.read_csv('cleaned_books_stage_3.csv')
     df_desc = pd.read_csv('google_desc_tfidf.csv')
@@ -72,7 +72,7 @@ if selected_option_page4 == 'By Description':
                     st.write(list_genres_desc_selected[idx])
 
 
-if selected_option_page4 == 'By Author':
+if selected_option_page4 == 'Algorithm based on author':
         
     df_all_books = pd.read_csv('cleaned_books_stage_3.csv')
     df_author_simal = pd.read_csv('df_authors_simal.csv')
