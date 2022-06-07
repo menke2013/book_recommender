@@ -12,10 +12,10 @@ genre_choice = st.sidebar.selectbox(
  'Which genre are you interested in?',
  ("Art", "Biography", "Business", "Chick-Lit", "Children", "Christian", "Classics",
           "Comics", "Contemporary", "Cookbooks", "Crime", "Ebooks", "Erotica", "Fantasy", "Fiction",
-          "Gay and Lesbian", "Graphic Novels", "Historical Fiction", "History", "Horror",
-          "Humor", "Manga", "Memoir", "Music", "Mystery", "Nonfiction", "Paranormal",
-          "Philosophy", "Poetry", "Psychology", "Religion", "Romance", "Science", "Science Fiction", 
-          "Self Help", "Suspense", "Spirituality", "Sports", "Steampunk","Thriller", "Travel", "Young-Adult"))
+           "Graphic-Novels", "Historical-Fiction", "History", "Horror",
+          "Humor","LGBT", "Manga", "Memoir", "Music", "Mystery", "Nonfiction", "Paranormal",
+          "Philosophy", "Poetry", "Psychology", "Religion", "Romance", "Science", "Science-Fiction", 
+           "Suspense", "Spirituality", "Sports", "Steampunk","Thriller", "Travel", "Young-Adult"))
 genre_choice2 = []
 genre_choice_3 = genre_choice
 genre_choice = genre_choice.lower()
@@ -28,7 +28,7 @@ df_genre_selected = ((df_best_books[df_best_books['genres'].str.contains(genre_c
 
 col1, center_writing, col2 = st.columns([1,5,1])
 with center_writing:
-#    genre_choice_3 = genre_choice.upper()
+
     st.subheader(f'The {number_of_top_books} best books in the {genre_choice_3} category')
 
 list_url_genre_selected = df_genre_selected['image_url'].to_list()

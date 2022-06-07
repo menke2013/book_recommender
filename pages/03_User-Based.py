@@ -8,19 +8,9 @@ st.markdown("<h1 style='text-align: center; color: red;font-size: 60px;'>Better 
 st.title('')
 
 df_all_books = pd.read_csv('cleaned_books_stage_3.csv')
-#df_user_rating_pred = pd.read_csv('top2k_users_20pred_svd.csv')
-#df_user_wishlist = pd.read_csv('wishlist_2k_svd.csv')
 
 wishlist_choice_page_3 = ['Yes', 'No']
 selected_wishlist_option_page_3 = st.sidebar.radio('Taking your wishlist into consideration?', wishlist_choice_page_3)
-
-
-#list_of_user_ids = list(df_user_rating_pred.user_id.unique())
-#list_of_user_ids.sort()
-
-#user_id_selection = st.sidebar.selectbox(
-#            'Who are you?', (list_of_user_ids))
-
 
 if selected_wishlist_option_page_3 == 'Yes':
     df_user_wishlist = pd.read_csv('wishlist_2k_svd.csv')
@@ -78,10 +68,7 @@ if selected_wishlist_option_page_3 == 'No':
     df_books_for_user_id = (df_user_rating_pred[df_user_rating_pred['user_id'] ==user_id_selection]).head(number_of_suggested_books_page3)
 
     df_books_for_user_id_2 = df_books_for_user_id.merge(df_all_books, how='left', on='book_id')
-
-#    list_of_books_for_user_id = list(df_books_for_user_id['book_id'])
-#    df_suggested_list_without_wishlist = df_all_books[df_all_books['book_id'].isin(list_of_books_for_user_id)]
-      
+     
     list_url_user_selected_1 = df_books_for_user_id_2['image_url'].to_list()
     list_title_user_selected_1 = df_books_for_user_id_2['title'].to_list()
     list_authors_user_selected_1 = df_books_for_user_id_2['authors'].to_list()
