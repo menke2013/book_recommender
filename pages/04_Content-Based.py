@@ -32,7 +32,7 @@ if selected_option_page4 == 'Algorithm based on description':
         with placeholder.container():
             
             if len(df_user_selection_books) < 1:
-                st.header("We couldn't find anything related. Try again")
+                st.header("We couldn't find anything related. Try again.")
             if len(df_user_selection_books) > 0:
                 st.subheader('Book(s) found in our database. Select the preferred one in the menu on the left.')
                 st.markdown(hide_table_row_index, unsafe_allow_html=True)
@@ -96,7 +96,7 @@ if selected_option_page4 == 'Algorithm based on author':
         placeholder = st.empty()
         with placeholder.container():
             if len(df_user_selection_books) < 1:
-                st.header("We couldn't find anything related. Try again")
+                st.header("We couldn't find anything related. Try again.")
             if len(df_user_selection_books) > 0:
                 st.subheader('Book(s) found in our database. Select the preferred one in the menu on the left.')
                 st.markdown(hide_table_row_index, unsafe_allow_html=True)
