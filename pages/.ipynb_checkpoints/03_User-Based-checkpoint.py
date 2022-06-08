@@ -49,7 +49,7 @@ if selected_wishlist_option_page_3 == 'Yes':
         with col1:
             st.image(book_cover, width=100)
         with col2:
-            st.write(list_title_user_selected_2[idx])
+            st.subheader(list_title_user_selected_2[idx])
             st.write(list_authors_user_selected_2[idx])
             st.write(list_genres_user_selected_2[idx])
             st.write(f'Estimated Rating:   {round(list_rating_user_selected_2[idx],2)}')
@@ -83,7 +83,7 @@ if selected_wishlist_option_page_3 == 'No':
         with col1:
             st.image(book_cover, width=100)
         with col2:
-            st.write(list_title_user_selected_1[idx])
+            st.subheader(list_title_user_selected_1[idx])
             st.write(list_authors_user_selected_1[idx])
             st.write(list_genres_user_selected_1[idx])
             st.write(f'Estimated Rating:   {round(list_rating_user_selected_1[idx],2)}')

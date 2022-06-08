@@ -43,7 +43,7 @@ for idx, book_cover in enumerate(list_url_genre_selected):
     with col1:
         st.image(book_cover, width=100)
     with col2:
-        st.write(list_title_genre_selected[idx])
+        st.subheader(list_title_genre_selected[idx])
         st.write(list_authors_genre_selected[idx])
         st.write(list_rating_genre_selected[idx])
 
